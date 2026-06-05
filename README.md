@@ -1,18 +1,92 @@
+# Tic Tac Toe — Java
+
+A console-based Tic Tac Toe game built in Java, structured using the **Strategy design pattern** to keep player behavior modular and extensible.
+
+---
+
+## Features
+
+- Two-player mode (Human vs Human)
+- Clean console UI with a 3×3 board
+- Win, loss, and draw detection
+- Strategy pattern — player behavior is interchangeable without changing core game logic
+
+---
+
+## Design Pattern
+
+### Strategy Pattern
+Each player's move behavior is defined as a strategy interface. This makes it easy to swap or extend player types (e.g. human input, AI, random bot) without modifying the game engine.
+
+```
+PlayerStrategy (interface)
+    └── HumanPlayer
+```
+
+---
+
+## Project Structure
+
+```
+src/
+└── game/
+    ├── Main.java               # Entry point — run this
+    ├── Board.java              # Game board logic
+    ├── Game.java               # Game loop and flow control
+    ├── Player.java             # Player model
+    ├── strategy/
+    │   ├── PlayerStrategy.java # Strategy interface
+    │   └── HumanPlayer.java    # Human input implementation
+```
+
+---
+
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+### Prerequisites
+- Java 8 or higher
+- Any IDE (IntelliJ, Eclipse) or terminal with `javac`
 
-## Folder Structure
+### Run from terminal
 
-The workspace contains two folders by default, where:
+```bash
+# Clone the repository
+git clone https://github.com/your-username/tictactoe.git
+cd tictactoe
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+# Compile
+javac -d out src/game/*.java src/game/strategy/*.java
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+# Run
+java -cp out game.Main
+```
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+### Run from IDE
+Open the project, navigate to `src/game/Main.java`, and click **Run**.
 
-## Dependency Management
+---
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## How to Play
+
+1. The game starts and asks each player to enter their name.
+2. Players take turns entering a position (1–9) corresponding to the board:
+
+```
+ 1 | 2 | 3
+-----------
+ 4 | 5 | 6
+-----------
+ 7 | 8 | 9
+```
+
+3. First player to get 3 in a row (horizontal, vertical, or diagonal) wins.
+4. If all 9 cells are filled with no winner, the game ends in a draw.
+
+---
+
+## Author
+
+**Shaikh Arshad** — Undergraduate Student & Backend Developer
+
+- GitHub: https://github.com/arshad-shaikh81
+- LinkedIn: https://www.linkedin.com/in/arshad-shaikh-990878365/
