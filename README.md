@@ -2,7 +2,7 @@
 
 A console-based Tic Tac Toe game built in Java, structured using the **Strategy design pattern** to keep player behavior modular and extensible.
 
----
+--- 
 
 ## Features
 
